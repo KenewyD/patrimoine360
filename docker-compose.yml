@@ -1,0 +1,13 @@
+services:
+  postgres:
+    image: postgis/postgis:15-3.4
+    environment:
+      POSTGRES_USER: demo
+      POSTGRES_PASSWORD: demo_local_only
+      POSTGRES_DB: patrimoine
+    ports:
+      - "5432:5432"
+    volumes:
+      - patrimoine_pg:/var/lib/postgresql/data
+volumes:
+  patrimoine_pg:
